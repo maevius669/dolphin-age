@@ -1,0 +1,19 @@
+[Desktop Entry]
+Actions=tarEncryptAGE;EncryptAGE
+Type=Service
+Icon=preferences-security
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=true
+X-KDE-Submenu=AGE Encryption
+
+[Desktop Action tarEncryptAGE]
+Name=Compress & Encrypt
+Icon=preferences-security
+Exec=tar -pzcf "%f.tar.gz" %f && age -R ~/.age-key/"$(whoami)" "%f.tar.gz" > "%f.tar.gz.age" && rm -f "%f.tar.gz"
+
+[Desktop Action EncryptAGE]
+Name=Encrypt
+Icon=preferences-security
+Exec=age -R ~/.age-key/"$(whoami)" %f > "%f.age"

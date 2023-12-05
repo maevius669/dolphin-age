@@ -1,0 +1,14 @@
+[Desktop Entry]
+Actions=DecryptAGE
+Type=Service
+Icon=preferences-security
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/age
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=true
+X-KDE-Submenu=AGE Encryption
+
+[Desktop Action DecryptAGE]
+Name=Decrypt
+Icon=preferences-security
+Exec=age -d -i ~/.age-key/"$(whoami)".age-key %f > %f.tmp && rename 's/(.*).{8}/$1/' *.age.tmp

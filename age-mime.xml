@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/age">
+        <comment>AGE Encrypted File</comment>
+        <icon name="encrypted"/>
+        <glob-deleteall/>
+        <glob pattern="*.age"/>
+    </mime-type>
+</mime-info>
