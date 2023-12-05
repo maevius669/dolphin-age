@@ -7,13 +7,16 @@ MimeType=all/all
 X-KDE-Priority=TopLevel
 X-KDE-StartupNotify=true
 X-KDE-Submenu=AGE Encryption
+X-KDE-Submenu[nl]=AGE-versleuteling
 
 [Desktop Action tarEncryptAGE]
 Name=Compress & Encrypt
+Name[nl]=Comprimeren en versleutelen
 Icon=preferences-security
 Exec=tar -pzcf "%f.tar.gz" %f && age -R ~/.age-key/"$(whoami)" "%f.tar.gz" > "%f.tar.gz.age" && rm -f "%f.tar.gz"
 
 [Desktop Action EncryptAGE]
 Name=Encrypt
+Name[nl]=Versleutelen
 Icon=preferences-security
 Exec=age -R ~/.age-key/"$(whoami)" %f > "%f.age"
