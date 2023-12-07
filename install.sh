@@ -19,13 +19,13 @@ if ! check "curl"; then
     fi
 fi
 
-# Check if AGE is installed
+# Check if age is installed
 if ! check "age"; then
-    echo "Installing AGE encryption tool.."
+    echo "Installing age encryption tool.."
     sudo curl -s https://api.github.com/repos/FiloSottile/age/releases/latest | grep "browser_download_url.*linux-amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -qi - -O - | tar -xz -C /tmp
     sudo mv /tmp/age/age /usr/bin/
     sudo mv /tmp/age/age-keygen /usr/bin/
-    echo "AGE installed successfully."
+    echo "age installed successfully."
 fi
 
 # Copy files to their respective directories.
@@ -36,8 +36,8 @@ cp age-encrypt.desktop ~/.local/share/kservices5/ServiceMenus/
 cp age-decrypt.desktop ~/.local/share/kservices5/ServiceMenus/
 xdg-mime install --mode user --novendor age-mime.xml
 
-# Create AGE key for current user at home folder .age-key
-echo "Generating AGE key.."
+# Create age key for current user at home folder .age-key
+echo "Generating age key.."
 mkdir -p ~/.age-key && age-keygen -o ~/.age-key/"$(whoami).age-key"
 sed -n '2p' ~/.age-key/"$(whoami).age-key" > ~/.age-key/"$(whoami).pk" && sed 's/# public key: //' ~/.age-key/"$(whoami).pk" > ~/.age-key/"$(whoami)" && rm -f ~/.age-key/"$(whoami).pk" && sed -i '1i\# '$(whoami) ~/.age-key/"$(whoami)"
 echo "Installation completed."

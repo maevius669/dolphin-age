@@ -6,11 +6,13 @@ ServiceTypes=KonqPopupMenu/Plugin
 MimeType=application/age
 X-KDE-Priority=TopLevel
 X-KDE-StartupNotify=true
-X-KDE-Submenu=AGE Encryption
-X-KDE-Submenu[nl]=AGE-versleuteling
+X-KDE-Submenu=age File Encryption
+X-KDE-Submenu[el]=Κρυπτογράφηση age
+X-KDE-Submenu[nl]=age-Versleuteling
 
 [Desktop Action DecryptAGE]
-Name=Decrypt
-Name[nl]=Ontsleutelen
+Name=• Decrypt
+Name[el]=• Αποκρυπτογράφηση
+Name[nl]=• Ontsleutelen
 Icon=preferences-security
 Exec=age -d -i ~/.age-key/"$(whoami)".age-key %f > %f.tmp && rename 's/(.*).{8}/$1/' *.age.tmp
