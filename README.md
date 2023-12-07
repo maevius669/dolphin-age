@@ -11,7 +11,7 @@ A KDE Dolphin context menu for automating the encryption of files & folders usin
 > * Checks if [age](https://github.com/FiloSottile/age) & [curl](https://github.com/curl/curl) are installed and if not it tries to install them.
 > * Copies the context menu entries to ***~/.local/share/kservices5/ServiceMenus***
 > * Adds MIME type for .age extension.
-> * Generates and saves your AGE key in ***~/.age-key*** so it can be used by the context menu
+> * Generates and saves your age key in ***~/.age-key*** so it can be used by the context menu
 
 ## Screenshots
 
